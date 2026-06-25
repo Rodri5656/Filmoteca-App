@@ -8,13 +8,13 @@
   "theme_color": "#16213e",
   "icons": [
     {
-      "src": "./Icono_Filmoteca_192x219.png",
-      "sizes": "192x219",
+      "src": "./Icono_Filmoteca_192x192.png",
+      "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./Icono_Filmoteca_512x584.png",
-      "sizes": "512x584",
+      "src": "./Icono_Filmoteca_512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
