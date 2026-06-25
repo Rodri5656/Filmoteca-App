@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmoteca — Gestor de Colección de Películas</title>
+    
+    <!-- Enlaces a los archivos de configuración (Asegúrate de que estén idénticos) -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <!-- ====== HEADER + ESTADÍSTICAS ====== -->
+    <header>
+        <div class="header-top">
+            <h1>🎬 Filmoteca</h1>
+        </div>
+        <div class="estadisticas" id="estadisticas">
+            <div class="stat">
+                <span class="stat-numero" id="totalPeliculas">0</span>
+                <span class="stat-etiqueta">Total</span>
+            </div>
+            <div class="stat">
+                <span class="stat-numero" id="totalVistas">0</span>
+                <span class="stat-etiqueta">Vistas</span>
+            </div>
+            <div class="stat">
+                <span class="stat-numero" id="totalPendientes">0</span>
+                <span class="stat-etiqueta">Pendientes</span>
+            </div>
+            <div class="stat">
+                <span class="stat-numero" id="puntuacionMedia">—</span>
+                <span class="stat-etiqueta">Nota media</span>
+            </div>
+            <div class="stat">
+                <span class="stat-numero" id="generoFrecuente">—</span>
+                <span class="stat-etiqueta">Género top</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ====== FORMULARIO AÑADIR PELÍCULA ====== -->
+        <section class="formulario" id="formulario">
+            <h2>Añadir Película</h2>
+            <form id="formPelicula" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="inputTitulo">Título *</label>
+                        <input type="text" id="inputTitulo" placeholder="Ej: El Padrino" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDirector">Director</label>
+                        <input type="text" id="inputDirector" placeholder="Ej: Francis Ford Coppola" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group form-anio">
+                        <label for="inputAnio">Año </label>
+                        <input type="number" id="inputAnio" placeholder="1888" min="1888" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="selectGeneroForm">Género *</label>
+                        <select id="selectGeneroForm" required>
+                            <option value="">— Selecciona —</option>
+                            <option value="Acción">Acción</option>
+                            <option value="Animación">Animación</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Ciencia Ficción">Ciencia Ficción</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Documental">Documental</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Fantasía">Fantasía</option>
+                            <option value="Musical">Musical</option>
+                            <option value="Terror">Terror</option>
+                            <option value="Thriller">Thriller</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-punt">
+                        <label for="inputPuntuacion">Puntuación (1-10)</label>
+                        <input type="number" id="inputPuntuacion" placeholder="7" min="1" max="10" step="0.1" required>
+                    </div>
+                </div>
+                <div class="form-acciones">
+                    <span class="form-error" id="formError"></span>
+                    <button type="submit" id="btnAgregar">➕ Añadir Película</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ====== TOOLBAR: BUSCAR + FILTRAR + ORDENAR ====== -->
+        <section class="toolbar">
+            <div class="toolbar-busqueda">
+                <label for="inputBusqueda">🔍</label>
+                <input type="text" id="inputBusqueda" placeholder="Buscar por título o director...">
+                <span class="resultados-busqueda" id="resultadosBusqueda"></span>
+            </div>
+            <div class="toolbar-filtros">
+                <select id="selectFiltroGenero">
+                    <option value="todos">Todos los géneros</option>
+                </select>
+                <div class="toolbar-ordenar">
+                    <span>Ordenar:</span>
+                    <button class="btn-ordenar activo" data-orden="titulo">Título</button>
+                    <button class="btn-ordenar" data-orden="anio">Año</button>
+                    <button class="btn-ordenar" data-orden="puntuacion">Puntuación</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== COLECCIÓN DE PELÍCULAS ====== -->
+        <section class="coleccion" id="coleccion">
+            <!-- Las tarjetas se renderizan aquí dinámicamente -->
+        </section>
+
+        <!-- ====== ESTADO VACÍO ====== -->
+        <div class="estado-vacio oculto" id="estadoVacio">
+            <p class="estado-vacio-icono">🎞️</p>
+            <p class="estado-vacio-texto">No hay películas en tu colección</p>
+            <p class="estado-vacio-sub">¡Añade la primera usando el formulario!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Filmoteca — Rodrigo Iglesia de Miguel · 2026</p>
+    </footer>
+
+    <script src="script_Filmoteca.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "Filmoteca App",
+  "short_name": "Filmoteca",
+  "description": "Tu gestor personal de películas offline",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#16213e",
+  "icons": [
+    {
+      "src": "./Icono_Filmoteca_192x219.png",
+      "sizes": "192x219",
+      "type": "image/png"
+    },
+    {
+      "src": "./Icono_Filmoteca_512x584.png",
+      "sizes": "512x584",
+      "type": "image/png"
+    }
+  ]
+}
